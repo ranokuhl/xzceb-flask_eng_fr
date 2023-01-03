@@ -37,4 +37,6 @@ def french_to_english(french_text):
     model_id ='fr-en').get_result()
     return english_text["translations"][0]["translation"]
 
-# print(french_to_english("Bonjour"))
+print(french_to_english("Bonjour"))
+
+

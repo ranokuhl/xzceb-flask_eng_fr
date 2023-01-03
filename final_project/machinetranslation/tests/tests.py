@@ -23,6 +23,7 @@ language_translator.set_service_url(url)
 
 class TestEnglishToFrench(unittest.TestCase):
     def testEnglishNull(self):
+        print("englishToFrench - assertNotEqual")
         self.assertNotEqual('', None)
 
     def testEnglishtoFrench(self):
@@ -30,11 +31,13 @@ class TestEnglishToFrench(unittest.TestCase):
         text = "Hello",
         model_id ='en-fr').get_result()
         translation = frenchText["translations"][0]["translation"]
+        print("englishToFrench - assertEqual")
         self.assertEqual(translation, "Bonjour")
 
         
 class TestFrenchToEnglish(unittest.TestCase):
     def testFrenchNull(self):
+        print("frenchToEnglish - assertNotEqual")
         self.assertNotEqual('', None)
 
     def testFrenchToEnglish(self):
@@ -42,6 +45,7 @@ class TestFrenchToEnglish(unittest.TestCase):
         text = "Bonjour",
         model_id ='fr-en').get_result()
         translation = englishText["translations"][0]["translation"]
+        print("frenchToEnglish - assertEqual")
         self.assertEqual(translation, "Hello")
 
 
